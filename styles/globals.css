@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+*{
+  font-family: 'reem kufi', cursive;
+}
+
+body{
+
+    overflow-x: hidden;
+}
+.product-skeleton-img{
+   
+      width: 100%;
+}
+
+.abc{
+
+    visibility: hidden;
+}
+.featuer_box_description{
+
+  overflow: hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 3;
+     -webkit-box-orient: vertical;
+     position: relative;
+}
+td,th{
+    text-wrap: nowrap;
+}
+
+.gallery-description{
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+/* .ant-modal{
+
+  width: 700px !important;
+  height: 400px !important;
+} */
