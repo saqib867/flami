@@ -3,6 +3,7 @@ import React from 'react'
 
 const Hero = () => {
   const router = useRouter()
+  console.log("asdfasf")
   return (
     <div className='bg-[#003933] flex justify-center py-2'>
       <div className='justify-between md:flex-row flex-col gap-10 flex xl:max-w-7xl px-10'>
