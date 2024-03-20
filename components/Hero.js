@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import React from 'react'
-
+// sdfdsdfsdfd
 const Hero = () => {
   const router = useRouter()
   console.log("asdfasf")
