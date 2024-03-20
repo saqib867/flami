@@ -6,6 +6,7 @@ import MainFooter from '@/components/Footer/MainFooter';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// afasdfasdf
 export default function App({ Component, pageProps }) {
   return (
     <div className='flex flex-col justify-between h-full'>
