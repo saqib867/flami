@@ -1,8 +1,11 @@
 import ContactBox from '@/components/contact/ContactBox';
 import ContactForm from '@/components/contact/ContactForm';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const ContactUs = () => {
+
+  const router = useRouter()
   return (
     <div className=' flex justify-center items-center p-2 sm:px-10 px-5 my-10 min-h-screen'>
       <div className='flex lg:flex-row flex-col justify-between gap-14 max-w-7xl'>
@@ -40,10 +43,10 @@ const ContactUs = () => {
             </a>
           </div> */}
           <div class='flex sm:flex-row flex-col gap-10 my-7'>
-            <button className='bg-[#003933] text-white text-[17px] p-4 w-full rounded-md'>
+            <button onClick={()=>router.push({pathname:'/detail_custom_form'})} className='bg-[#003933] text-white text-[17px] p-4 w-full rounded-md'>
               Design Your Sign
             </button>
-            <button className='bg-[#003933] text-white text-[17px] p-4 w-full rounded-md'>
+            <button onClick={()=>router.push({pathname:"/custome-box"})} className='bg-[#003933] text-white text-[17px] p-4 w-full rounded-md'>
               Design Your Box
             </button>
           </div>

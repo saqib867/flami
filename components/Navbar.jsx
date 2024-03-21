@@ -36,7 +36,7 @@ export default function Navbar() {
     { name: 'Reviews', current: router.pathname === '/customer-reviews' ? true : false, path: "/customer-reviews" },
     { name: 'Products', current: router.pathname === '/products' ? true : false, path: '/products' },
     { name: 'Contact', current: router.pathname === '/contact-us' ? true : false, path: '/contact-us' },
-    { name: 'Design Your Sign or Box', current: router.pathname === '/design-your-sign-or-box' ? true : false, path: '/' },
+    { name: 'Design Your Sign or Box', current: router.pathname === '/create-custome' ? true : false, path: '/create-custome' },
     { name: 'Customer', current: router.pathname === '/page_for_admin' ? true : false, path: '/page_for_admin' },
 
   ]
