@@ -14,11 +14,11 @@ const CustomBox = () => {
     phone:yup.number().required("phone number is required"),
     sign_content:yup.string().required("Content is required"),
     budget:yup.number().required("Budget is required"),
-    timber_specie:yup.string().required("This field is required"),
+   
     Postage:yup.string().required("postage is required"),
     post_code:yup.string().required("Post code is required"),
     font:yup.string().required("font is required"),
-    size:yup.string().required("Size is required"),
+   
     compartments:yup.number().required("field is required"),
     extra_comment:yup.string()
   });
@@ -74,30 +74,30 @@ const CustomBox = () => {
               <p>You can also use your own font. Just send link of the font or let us know the name of font</p>
               <p><a className='p-2 m-2 bg-[#FE7446] text-white rounded' href='https://mystrapi.s3.eu-north-1.amazonaws.com/fonts.pdf'>Click here to view the fonts style </a> </p>
            </div>
-          <form onSubmit={handleSubmit(handleSubmitData)}  className='flex flex-col gap-3 gap-y-9 max-w-screen-2xl my-10 justify-between px-5'>
+          <form onSubmit={handleSubmit(handleSubmitData)}  className='flex flex-col gap-3  max-w-screen-2xl mt-10 justify-between px-5'>
                    {/* <div>
                     <h3>Click here to view the fonts</h3>
                     <p>You can also use you own font,Paste link of fonts or type name of the font</p>
                      <a href={`${process.env.PUBLIC_URL}/assets/flaming-fonts.pdf`} without target='_blank' rel="noopener noreferrer">Click here to see fonts</a>
                    </div> */}
-                   <div className='flex items-center gap-x-2 w-full'>
+                   <div className='flex flex-col gap-y-2 sm:flex-row sm:items-center gap-x-2 w-full'>
                    <SignInput label={'First Name'} events={register} name={'first_name'} errors={errors} type={'text'} />
                    <SignInput label={'Last Name'} events={register} name={'last_name'} errors={errors} type={'text'} />
                    </div>
-                   <div className='flex items-center gap-x-2'>
+                   <div className='flex flex-col gap-y-2 sm:flex-row sm:items-center gap-x-2 w-full'>
                     <SignInput label={'Email'} events={register} name={'email'} errors={errors} type={'text'} />
                     <SignInput label={'Phone No'} events={register} name={'phone'} errors={errors} type={'number'} />
                    </div>
                     <div className='flex items-center gap-x-2'>
-                    <SignInput label={'Timber Specie'} events={register} name={'timber_specie'} errors={errors} type={'text'} />
+                   
                     <SignInput label={'Font'} events={register} name={'font'} errors={errors} type={'text'} />
                    </div>
                    <SignInput label={'Budget'} events={register} name={'budget'} errors={errors} type={'number'} />
                    <SignInput label={'Wording on Top'} events={register} name={'sign_content'} errors={errors} type={'text'} />
-                   <SignInput label={'Size of Sign'} events={register} name={'size'} errors={errors} type={'text'} />
+                   
                    
 
-                   <div className='flex items-center gap-x-2'>
+                   <div className='flex flex-col gap-y-2 sm:flex-row sm:items-center gap-x-2 w-full'>
                     <div className='flex flex-col gap-y-2 w-full ' >
                      <label>Compartments</label>
                      <select {...register('compartments')} className='h-10 rounded border border-slate-400'>

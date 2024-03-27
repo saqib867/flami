@@ -4,8 +4,8 @@ import React from 'react'
 
 function detail_custom_form() {
   return (
-    <div>
-        <div className='max-w-6xl mx-auto' >
+    <div className='bg-[#E7E1CC]'>
+        <div className='max-w-6xl mx-auto ' >
             
                  <CreateCustomSign/>
         </div>

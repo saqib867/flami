@@ -71,7 +71,7 @@ const CreateCustomSign = () => {
   
 
   return (
-    <div className='bg-[#E7E1CC]'>
+    <div className=''>
 
       <div className='flex max-w-5xl m-auto flex-col  py-10'>
 
@@ -90,22 +90,30 @@ const CreateCustomSign = () => {
               <p><a className='p-2 m-2 bg-[#FE7446] text-white rounded' href='https://mystrapi.s3.eu-north-1.amazonaws.com/fonts.pdf'>Click here to view the fonts style </a> </p>
            </div>
 
-          <form onSubmit={handleSubmit(handleSubmitData)}  className='flex flex-col gap-3 max-w-screen-2xl my-10 justify-between px-5'>
+          <form onSubmit={handleSubmit(handleSubmitData)}  className='flex flex-col gap-3 max-w-screen-2xl  justify-between px-5'>
                    {/* <div>
                     <h3>Click here to view the fonts</h3>
                     <p>You can also use you own font,Paste link of fonts or type name of the font</p>
                      <a href={`${process.env.PUBLIC_URL}/assets/flaming-fonts.pdf`} without target='_blank' rel="noopener noreferrer">Click here to see fonts</a>
                    </div> */}
-                   <div className='flex items-center gap-x-2 w-full'>
+                   <div className='flex flex-col gap-y-2 sm:flex-row sm:items-center gap-x-2 w-full'>
                    <SignInput label={'First Name'} events={register} name={'first_name'} errors={errors} type={'text'} />
                    <SignInput label={'Last Name'} events={register} name={'last_name'} errors={errors} type={'text'} />
                    </div>
-                   <div className='flex items-center gap-x-2'>
+                   <div className='flex flex-col gap-y-2 sm:flex-row sm:items-center gap-x-2 w-full'>
                     <SignInput label={'Email'} events={register} name={'email'} errors={errors} type={'text'} />
                     <SignInput label={'Phone No'} events={register} name={'phone'} errors={errors} type={'number'} />
                    </div>
-                    <div className='flex items-center gap-x-2'>
+                    <div className='grid grid-cols-1 gap-y-2  sm:grid-cols-2 sm:items-center md:grid-cols-3 gap-x-2 w-full'>
                     <SignInput label={'Timber Specie'} events={register} name={'timber_specie'} errors={errors} type={'text'} />
+                    <div className='flex flex-col gap-y-2 w-full '>
+                    <label>Timber Species</label>
+                    <select {...register('timber_specie')} name='timber_specie' className='h-10 rounded border border-slate-400'>
+                        <option value={"Red IronBark Eucalyptus (Reddish Brown)"}>Red IronBark Eucalyptus (Reddish Brown)</option>
+                        <option value={"Spotted Gum Eucalyptus (Brown)"}>Spotted Gum Eucalyptus (Brown)</option>
+                        <option value={"Birdseye StringyBark Eucalyptus (Blonde-Brown)"}>Birdseye StringyBark Eucalyptus (Blonde-Brown)</option>
+                    </select>
+                    </div>
                     <SignInput label={'Font'} events={register} name={'font'} errors={errors} type={'text'} />
                    </div>
                    <SignInput label={'Budget'} events={register} name={'budget'} errors={errors} type={'number'} />
@@ -113,7 +121,7 @@ const CreateCustomSign = () => {
                    <SignInput label={'Size of Sign'} events={register} name={'size'} errors={errors} type={'text'} />
                    
                    
-                   <div className='flex items-center gap-x-2'>
+                   <div className='flex flex-col gap-y-2 sm:flex-row sm:items-center gap-x-2 w-full'>
                     <div className='flex flex-col gap-y-2 w-full '>
                      <label>Sign Edging</label>
                      <select {...register('sign_edge')} name='sign_edge' className='h-10 rounded border border-slate-400'>
@@ -140,7 +148,7 @@ const CreateCustomSign = () => {
                    </div>
                    </div>
 
-                   <div className='flex items-center gap-x-2'>
+                   <div className='flex flex-col gap-y-2 sm:flex-row sm:items-center gap-x-2 w-full'>
                     <div className='flex flex-col gap-y-2 w-full ' >
                      <label>Fixing Option</label>
                      <select {...register('fixing_option')} className='h-10 rounded border border-slate-400'>
