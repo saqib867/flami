@@ -4,7 +4,7 @@ import React from 'react';
 const MainFooter = () => {
   return (
     <div className='bg-[#003933] p-10 pb-3'>
-      <div className='flex justify-between max-w-[970px] mx-auto'>
+      <div className='flex flex-col sm:flex-row justify-between max-w-[970px] mx-auto gap-y-6'>
         <div className='flex flex-col gap-4'>
           <div className='flex items-center gap-2'>
             <img src='/logo.png' alt='logo' />
@@ -21,7 +21,7 @@ const MainFooter = () => {
         <div className='flex flex-col gap-2'>
           <span className='font-bold text-white'>Contact Us</span>
           <span className=' text-white'>flaminsigns@hotmail.com</span>
-          <span className=' text-white'>0404032722</span>
+          <span className=' text-white'> 0404032722</span>
 
           <div className='flex gap-3 mt-5 items-center'>
             <a href='https://www.facebook.com/FlaminSigns/' target='_blank'>
@@ -34,7 +34,7 @@ const MainFooter = () => {
           </div>
         </div>
       </div>
-      <div className='mt-14 text-sm text-white flex md:flex-row flex-col gap-5 justify-between max-w-[970px] mx-auto'>
+      <div className='mt-14 text-sm text-white flex md:flex-row flex-col gap-5 justify-between max-w-[970px] mx-auto text-center'>
         <span>2024 © Flamin' Signs and Boxes - All right reserved</span>
 
         <div>
