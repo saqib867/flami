@@ -49,9 +49,8 @@ const CreateCustomSign = () => {
       const combineData = {...data,type}
        formData.append("files.image",image)
        formData.append("data",JSON.stringify(combineData))
-
+       
             try {
-
                 const response = await axiosInstance.post("/customer-custom-designs?populate=*",formData)
                 console.log("custome response ",response.data?.data?.attributes)
                 const emailResponse = await  axiosInstance.post('/user/client/email',{product:response.data?.data?.attributes,image,to:'abc@gmail.com',from:data?.email})

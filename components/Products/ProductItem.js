@@ -4,11 +4,12 @@ import { Button, Radio, Select } from "antd";
 import CustomizationForm from "./CustomizationForm";
 import { baseImgUri } from "@/constants/baseImgUri";
 import { axiosInstance } from "@/axios/axios";
+import DescriptionBlockRenderer from "../DescriptionBlockRenderer";
 
 const ProductItem = () => {
   const router = useRouter();
   const productId = router.query?.itemId;
-  console.log("run production level")
+  
   const [price, setPrice] = useState();
   
   const [ItemDetails, setItemDetails] = useState({
@@ -53,12 +54,10 @@ const ProductItem = () => {
             title: getData?.title,
             heroImg: getData?.heroImg?.data?.attributes?.url,
             childImages: getData?.gallery?.data,
-            description: getData.description,
-            size: getData?.initial_size,
+            description: getData.Description,
+           
             type: getData?.categories_id?.data?.attributes?.type,
-            Postage:getData?.Postage,
-            postage_price:getData?.postage_price,
-            timber_specie:getData?.timber_specie || null
+           
           });
         } catch (error) {
           console.log("failed to fetch data", error);
@@ -76,10 +75,10 @@ const ProductItem = () => {
   return (
     <div className="flex flex-col my-5">
       <div className="flex md:flex-row flex-col gap-3 justify-between">
-        <div className="flex flex-1">
+        <div className="flex flex-1 items-center justify-center">
           <img
             src={`${baseImgUri}${ItemDetails.heroImg}`}
-            className="rounded-md  w-full sm:object-cover "
+            className="rounded-md  w-[50%] sm:w-[100%]"
             alt="hero"
           />
         </div>
@@ -92,13 +91,7 @@ const ProductItem = () => {
             Price - $ {parseInt(totalPrice)}
           </span>
 
-          {ItemDetails?.size && <div className="flex gap-x-2 items-center" >
-           <span className="text-[#003933] font-bold text-lg sm:text-[20px]"> Size - {ItemDetails?.size}</span>
-           {ItemDetails?.timber_specie && <span className="text-[#003933] font-bold text-lg sm:text-[20px]">  {ItemDetails?.timber_specie}</span>}
-          </div>}
-
-          <p className="text-[#003933] font-bold text-base sm:text-xl">Postage : {ItemDetails?.Postage} {ItemDetails?.postage_price != 0 && `$${ItemDetails?.postage_price}`}</p>
-          <p className="text-gray-600 text-lg">{ItemDetails?.description}</p>
+          {ItemDetails && <DescriptionBlockRenderer description ={ItemDetails?.description}/>}
         </div>
       </div>
       <div className="flex items-start gap-x-10 flex-col-reverse">
@@ -112,12 +105,12 @@ const ProductItem = () => {
           <h2 className="text-3xl font-bold mb-5">Gallery</h2>
           <p className="text-gray-600 text-xl">Gallery Images</p>
           <div className={`flex flex-wrap gap-8`}>
-            {ItemDetails.childImages?.map((picture, index) => {
+            {ItemDetails?.childImages?.map((picture, index) => {
               return (
                 <img
                   key={index}
                   src={`${baseImgUri}${picture?.attributes?.url}`}
-                  className="rounded max-w-[100%] sm:w-[100%] sm:max-w-[280px] flex-1 bg-cover"
+                  className="rounded max-w-[40%] sm:w-[100%] sm:max-w-[280px] flex-1 bg-cover"
                 />
               );
             })}

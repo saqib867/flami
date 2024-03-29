@@ -59,15 +59,19 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center md:items-stretch justify-start">
+              <div className="flex flex-1 gap-x-2 items-center md:items-stretch justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
                     src="/logo.png"
                     alt="Your Company"
                   />
+                  
                 </div>
-
+                <div className='flex flex-col'>
+                  <small className='text-white'>0404032722 </small>
+                  <small className='text-white'> 100% Australian made</small>
+                </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
