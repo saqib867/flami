@@ -1,3 +1,4 @@
+import Heading from '@/metaHeaders/MetaHeaders';
 import React from 'react';
 
 const AboutUs = () => {
