@@ -3,6 +3,7 @@ import React from 'react';
 const AboutUs = () => {
   return (
     <div className='max-w-7xl sm:px-10 px-4 m-auto'>
+      <Heading description="flaming about-us" keywords="about us ,contact us,timber engraving signs,flaming,wood, engraving, wood engraving, signs, home signs, paypal" title="About Us" />
       <div className='flex xl:flex-row flex-col justify-between pt-10  m-auto gap-5'>
         <div className='flex flex-col py-10 flex-1'>
           <h1 className='text-black font-bold lg:text-[35px] sm:text-[30px] text-[22px] leading-tight'>

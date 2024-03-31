@@ -16,12 +16,13 @@ const FeaturedBox = ({ productDetails, id,readMore,handleReadMore }) => {
   }
 
   return (
-    <div className="bg-white  flex flex-col rounded-[4px] justify-between flex-1  sm:w-[100%] ">
+    <div className=" shadow-xl flex flex-col rounded-[4px]  justify-between flex-1 max-w-[92%] mx-auto ">
+       <div className="w-full h-[330px] flex justify-center items-center">
       <img
         src={`${baseImgUrl}${productDetails?.image?.data?.attributes?.url}`}
-        className="w-full h-[280px] object-cover"
+        className="w-[330px] text-center"
       />
-
+     </div>
       <div>
         <div className="text-start mx-2">
           <span className="text-[#003933] text-[20px] sm:text-[22px] font-[700]">
@@ -33,7 +34,7 @@ const FeaturedBox = ({ productDetails, id,readMore,handleReadMore }) => {
           <div className="my-2" ><span className="text-blue-500 cursor-pointer" onClick={()=>handleReadMore(productDetails)}>Read More</span></div>
         </div>
         </div>
-        <div className="flex justify-between items-center w-full bottom-0">
+        <div className="flex justify-between items-center w-full flex-1bottom-0">
           <button
             onClick={handleExplore}
             className="bg-[#003933] text-white w-full px-3 py-2  rounded-[4px]"

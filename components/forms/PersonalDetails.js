@@ -99,7 +99,7 @@ function PersonalForm() {
 
   return (
     <div className="w-full">
-      <div className="flex  flex-col-reverse sm:flex-row-reverse justify-center gap-y-8 md:m-4">
+      <div className="flex  flex-col-reverse sm:flex-row-reverse justify-center gap-y-8 gap-x-8 md:m-4">
         <form
           onSubmit={handleSubmit(handleFormSubmit)}
           className=" flex flex-col gap-y-9 w-[100%] sm:[50%] md:w-[40%] shadow-slate-400 shadow-lg p-2 h-fit rounded"
@@ -154,7 +154,7 @@ function PersonalForm() {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
-        <div>
+        <div className="w-[50%]">
           <div className="flex flex-col gap-y-4 items-center  px-3 py-2">
             <div className="flex flex-col gap-y-4">
               <h3 className="text-2xl text-start font-bold">

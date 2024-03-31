@@ -73,12 +73,13 @@ const ProductItem = () => {
   };
 
   return (
-    <div className="flex flex-col my-5">
+    <>
+    {ItemDetails && <div className="flex flex-col my-5">
       <div className="flex md:flex-row flex-col gap-3 justify-between">
         <div className="flex flex-1 items-center justify-center">
           <img
             src={`${baseImgUri}${ItemDetails.heroImg}`}
-            className="rounded-md  w-[50%] sm:w-[100%]"
+            className="rounded-md  w-[50%] sm:w-[80%]"
             alt="hero"
           />
         </div>
@@ -91,7 +92,7 @@ const ProductItem = () => {
             Price - $ {parseInt(totalPrice)}
           </span>
 
-          {ItemDetails && <DescriptionBlockRenderer description ={ItemDetails?.description}/>}
+         <div>{<DescriptionBlockRenderer description ={ItemDetails?.description}/>}</div> 
         </div>
       </div>
       <div className="flex items-start gap-x-10 flex-col-reverse">
@@ -104,7 +105,7 @@ const ProductItem = () => {
         >
           <h2 className="text-3xl font-bold mb-5">Gallery</h2>
           <p className="text-gray-600 text-xl">Gallery Images</p>
-          <div className={`flex flex-wrap gap-8`}>
+          <div className={`flex flex-wrap gap-8 items-center`}>
             {ItemDetails?.childImages?.map((picture, index) => {
               return (
                 <img
@@ -180,7 +181,8 @@ const ProductItem = () => {
           )}
         </div>
       </div>
-    </div>
+    </div>}
+    </>
   );
 };
 

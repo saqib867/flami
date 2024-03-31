@@ -89,7 +89,7 @@ const CreateCustomSign = () => {
               <p><a className='p-2 m-2 bg-[#FE7446] text-white rounded' href='https://mystrapi.s3.eu-north-1.amazonaws.com/fonts.pdf'>Click here to view the fonts style </a> </p>
            </div>
 
-          <form onSubmit={handleSubmit(handleSubmitData)}  className='flex flex-col gap-3 max-w-screen-2xl  justify-between px-5'>
+          <form onSubmit={handleSubmit(handleSubmitData)}  className='flex flex-col gap-3 max-w-screen-2xl  mt-6 justify-between px-5'>
                    {/* <div>
                     <h3>Click here to view the fonts</h3>
                     <p>You can also use you own font,Paste link of fonts or type name of the font</p>
@@ -131,7 +131,7 @@ const CreateCustomSign = () => {
                           <option value={"Burnt, Straight Edge"}>Burnt, Straight Edge</option>
                           <option value={"Burnt, Natural Edge"}>Burnt, Natural Edge</option>
                           <option value={"Cut out corners"}>Cut out corners</option>
-                          <option value={'Cut Out Cornors with borders'}>Cut Out Cornors with borders</option>
+                          <option value={'Cut Out Corners with borders'}>Cut Out Cornors with borders</option>
                      </select>
                      {errors.sign_edge && <small  className='text-red-600'>{errors.sign_edge.message}</small>}
                    </div>
@@ -165,8 +165,10 @@ const CreateCustomSign = () => {
                      <label>Postage</label>
                      <select {...register('Postage')} className='h-10 rounded border border-slate-400'>
                           <option selected disabled value={''}>Choose an option</option>
+                          
                           <option value={'Aus Post Postage: Free Austrilia wide'}>Aus Post Postage: Free Austrilia wide</option>
                           <option value={'Aus Post Express'}>Aus Post Express $15 -  $25</option>
+                          <option value={"Regional places need quoting"}>Regional places need quoting</option>
                          
                      </select>
                      {errors.Postage && <small className='text-red-600'>{errors.Postageostage.message}</small>}

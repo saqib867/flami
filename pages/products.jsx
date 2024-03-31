@@ -1,22 +1,16 @@
-import BBQSmokerSigns from "@/components/Products/BBQSmokerSigns";
-import GarageSigns from "@/components/Products/GarageSigns";
-import GerdenSigns from "@/components/Products/GerdenSigns";
+
 import HomeHouseSign from "@/components/Products/HomeHouseSign";
-import MemorialPlaques from "@/components/Products/MemorialPlaques";
-import ProductBox from "@/components/Products/ProductBox";
-import PropertyFarmSigns from "@/components/Products/PropertyFarmSigns";
-import WeddingSigns from "@/components/Products/WeddingSigns";
+
 import useCategoryList from "@/hooks/useCategoryList";
-import useProducts from "@/hooks/useProducts";
-import { Tabs, Breadcrumb } from "antd";
+import Heading from "@/metaHeaders/MetaHeaders";
+import { Breadcrumb } from "antd";
+
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 const ProductsPage = () => {
   const router = useRouter();
   const itemId = router.query.itemId 
   const categoryType = router.query.type
-  
-  console.log("item id ",itemId)
   
   const { categoryList } = useCategoryList();
   const [currentId,setCurrentId] = useState(itemId)
@@ -33,7 +27,7 @@ const ProductsPage = () => {
    
 
   };
-
+  
   useEffect(() => {
     if (!itemId) {
       // If itemId is not present, set currentId to the id of the first element in categoryList
@@ -59,8 +53,10 @@ const ProductsPage = () => {
 
   return (
     <div className="bg-[#f0eeef] min-h-full ">
+      <Heading description="Product page" keywords="product,olive wood heart,home sings,chopping board, timer serving board,flaming,wood, engraving, wood engraving, signs, home signs, paypal" title="Home" />
+      {/* <img src="../product-banner.webp" className="w-full" /> */}
       <div className="max-w-7xl m-auto">
-      <div className="p-5">
+      <div className="p-5 ">
         <Breadcrumb
           items={[
             {
@@ -76,9 +72,10 @@ const ProductsPage = () => {
         />
       </div>
       <div className=" my-6 mx-1">
-        <div className="flex flex-wrap gap-3">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3">
+          
           {categoryList.map((item,index)=>(
-                <button onClick={()=>handleTab(item?.id,item?.attributes?.type)} key={index} className={`border p-2 rounded min-w-[100px] ${type == item?.attributes?.type  ? 'bg-[#003933] shadow-xl text-white' :' border-slate-600 shadow-xl text-black'} `}>{item?.attributes?.Title}</button>
+                <button onClick={()=>handleTab(item?.id,item?.attributes?.type)} key={index} className={`border p-2 rounded text-sm sm:text-base min-w-[100px] ${type == item?.attributes?.type  ? 'bg-[#003933] shadow-xl text-white' :' border-slate-600 shadow-xl text-black'} `}>{item?.attributes?.Title}</button>
           ))}
       </div>
       </div>

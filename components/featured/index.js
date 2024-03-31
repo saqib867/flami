@@ -54,15 +54,15 @@ const Featured = () => {
   }
 
   return (
-    <div className="bg-[#f0eeef]  pb-10">
+    <div className="  pb-10">
       {!loading && <div className="flex justify-center py-7 bg-[#E7E1CC]">
         <span className="text-[#003933] sm:text-[40px] text-[30px] text-center font-[600]">
           Products
         </span>
       </div>}
-      <div className="bg-[#f0eeef] py-5 flex justify-center">
-        <div class=" sm:max-w-[1400px] mx-auto w-[100%] ">
-          <div className="w-full grid lg:grid-cols-3 mx-1 sm:mx-2 sm:grid-cols-2 grid-cols-1 gap-10 gap-x-15">
+      <div className="bg-[hsl(330,6%,94%)] py-5 flex justify-center">
+        <div class=" sm:max-w-[1000px] mx-auto w-[100%] ">
+          <div className="w-full grid   sm:mx-2 sm:grid-cols-2 grid-cols-1 gap-10 gap-x-15">
             {product?.map((item, index) => {
               return (
                 <div key={index}>

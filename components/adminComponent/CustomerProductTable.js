@@ -4,12 +4,16 @@ const { Column, ColumnGroup } = Table;
 import React, { useState } from 'react'
 import EmailPopUp from './EmailPopUp';
 import ProductDetailPopup from './ProductDetailPopup';
+import ProductPagination from '../pagination/ProductPagination';
 
-function CustomerProductTable({data,active}) {
+function CustomerProductTable({data,active,to,page,setPage}) {
+
+  console.log("pageeeee==> ",to)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [viewModal, setViewModal] = useState(false);
   const [userData, setUserData] = useState(null);
   const [details,setDetails] = useState(null)
+ 
 
  
   const handlePopUp = (data) => {
@@ -56,35 +60,7 @@ function CustomerProductTable({data,active}) {
             key={"sign_content"}
             render={(text,record)=>(<p>{record?.attributes?.sign_content}</p>)}
           />}
-          {active != 'olive_wood_heart' && <Column title="Size" dataIndex="initial_size" key="initial_size" render={(text,record)=>(<p>{record?.attributes?.[active]?.data?.attributes?.initial_size}</p>)}  />}
-
-          <Column title="Price" dataIndex="price" key="price" render={(text,record)=>(
-                       <p>${record?.attributes?.[active]?.data?.attributes?.price}</p>
-          )} />
-          {active == 'sign' && <Column title="Sign Edging" dataIndex="sign_edge" key="sign_edge"  render={(text,record)=>(
-                       <p>${record?.attributes?.[active]?.data?.attributes?.sign_edge}</p>
-          )} />}
-          {active == 'sign' && <Column
-            title="Timber Specie"
-            dataIndex="timer_specie"
-            key="timer_specie"
-            render={(text,record)=>(
-                <p>${record?.attributes?.[active]?.data?.attributes?.timber_specie}</p>
-   )}
-          />}
-          
-          {active == 'box' && <Column
-            title="Comparments"
-            dataIndex="compartments"
-            key="comparments"
-            render={(text,record)=>(
-                <p>${record?.attributes?.[active]?.data?.attributes?.compartments}</p>
-             )}
-          />}
-          <Column title="Postage" dataIndex="Postage" key="Postage"  render={(text,record)=>(
-                       <p>{record?.attributes?.[active]?.data?.attributes?.Postage} ${record?.attributes?.[active]?.data?.attributes?.postage_price}</p>
-          )} />
-          
+         
           <Column
             title="Action"
             className="text-center"
@@ -107,6 +83,13 @@ function CustomerProductTable({data,active}) {
             )}
           />
         </Table>
+        <div className="my-2 mx-3 flex items-end justify-end">
+            <ProductPagination
+              page={page}
+              setPage={setPage}
+              total={Math.ceil(parseInt(to)/12)}
+            />
+          </div>
           {isModalOpen && <EmailPopUp isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} userData={userData} isCustome={false} active={active} />}
           {viewModal && (
         <ProductDetailPopup

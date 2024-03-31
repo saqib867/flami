@@ -45,6 +45,13 @@ body{
 td,th{
     text-wrap: nowrap;
 }
+/* .product-page{
+
+    background:url(../public/product-banner.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+} */
 
 .gallery-description{
 

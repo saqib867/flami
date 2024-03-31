@@ -12,7 +12,7 @@ function DescriptionBlockRenderer({description}) {
       content={description}
       blocks={{
         // You can use the default components to set class names...
-        paragraph: ({ children }) => <p className="">{children}</p>,
+        paragraph: ({ children }) => <p className="text-[15px]">{children}</p>,
         // ...or point to a design system
         heading: ({ children, level }) => {
           switch (level) {

@@ -84,7 +84,7 @@ export default function Navbar() {
                         href={item.href}
                         className={classNames(
                           item.current ? ' text-white' : 'text-gray-300 hover:text-white',
-                          'rounded-md px-3 py-2 text-base font-medium hover:cursor-pointer'
+                          'rounded-md px-3 py-2 text-[12px] lg:text-base font-medium hover:cursor-pointer'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >

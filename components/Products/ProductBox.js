@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 import { useRouter } from 'next/router'
 import { baseImgUri } from '@/constants/baseImgUri';
+import DescriptionBlockRenderer from '../DescriptionBlockRenderer';
 const ProductBox = memo(({productData,id,type})=>{
 
 console.log("type =>",type)
@@ -23,16 +24,13 @@ if (typeof window !== 'undefined') {
       </div>
       <span className='text-[#003933] text-[22px] font-[700] text-center '>{productData?.title}</span>
 
-      <span className='text-black font-[400] featuer_box_description '>
-        {productData?.description}
+      <span className='text-black font-[400] line-clamp-4 '>
+        <DescriptionBlockRenderer description={productData?.Description} />
       </span>
 
-      <div className='flex justify-between items-center absolute bottom-0'>
-        <button onClick={handleExplore} className='bg-[#003933] text-white w-fit px-3 py-2 my-4 rounded-[4px]'>Explore</button>
+      <div className='flex justify-between items-center absolute w-[98%] bottom-0'>
+        <button onClick={handleExplore} className='bg-[#003933] text-white w-full px-3 py-2 my-4 rounded-[4px]'>Explore</button>
 
-        <div className='cursor-pointer'>
-          {/* <img src="/cart1.png" alt="cart" className='' /> */}
-        </div>
 
       </div>
 

@@ -20,7 +20,7 @@ const MainFooter = () => {
 
         <div className='flex flex-col gap-2'>
           <span className='font-bold text-white'>Contact Us</span>
-          <span className=' text-white'>flaminsigns@hotmail.com</span>
+          <span className=' text-white'>flaminsignsandboxes@gmail.com</span>
           <span className=' text-white'> 0404032722</span>
 
           <div className='flex gap-3 mt-5 items-center'>

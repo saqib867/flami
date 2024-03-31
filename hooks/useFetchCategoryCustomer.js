@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { axiosInstance } from "@/axios/axios";
 
 
-function useFetchCategoryCustomer(active,searchTerm) {
+function useFetchCategoryCustomer(active,searchTerm,page) {
   const [data, setData] = useState([]);
+  const [total,setTotal] = useState(0)
 
   const activeTab =
     active == 2
@@ -16,7 +17,7 @@ function useFetchCategoryCustomer(active,searchTerm) {
       ? "timber_serving_board"
       : active == 6
       ? "olive_wood_heart"
-      : "";
+      : "";   
 
   useEffect(() => {
     if (active != 1) {
@@ -24,8 +25,10 @@ function useFetchCategoryCustomer(active,searchTerm) {
         try {
           const api = searchTerm
           ? `/customers?populate[0]=${activeTab}&populate[1]=${activeTab}.heroImg&populate[2]=${activeTab}.categories_data&filters[$or][0][first_name][$containsi]=${searchTerm}&filters[$or][1][last_name][$containsi]=${searchTerm}&filters[$or][2][email][$containsi]=${searchTerm}&sort[1]=first_name`
-          : `/customers?populate[0]=${activeTab}&populate[1]=${activeTab}.heroImg&populate[2]=${activeTab}.categories_data`;
+          : `/customers?populate[0]=${activeTab}&populate[1]=${activeTab}.heroImg&populate[2]=${activeTab}.categories_data&pagination[page]=${page}&pagination[pageSize]=12`;
           const response = await axiosInstance.get(api);
+          setTotal(response.data?.meta?.pagination?.total)
+          console.log("response.data?.meta?.pagination?.total ",response.data?.meta?.pagination?.total)
           const getData = response?.data?.data?.filter(
             (item) => item?.attributes[activeTab]?.data
           );
@@ -40,7 +43,7 @@ function useFetchCategoryCustomer(active,searchTerm) {
     }
   }, [active,searchTerm]);
 
-  return { data: data };
+  return { data: data,to:total };
 }
 
 export default useFetchCategoryCustomer;

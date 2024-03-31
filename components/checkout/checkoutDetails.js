@@ -97,7 +97,8 @@ console.log("user data ",userData)
                   <PayPalScriptProvider
                 options={{
                   clientId:
-                    "ATF_cy6zZwHn4mHPgBaNcKm3094XLjpIJswgGiUCJeYFhLKSJDBIK_ZqGUhwdkqXeuVROllNGK8cZceM",
+                    // "ATF_cy6zZwHn4mHPgBaNcKm3094XLjpIJswgGiUCJeYFhLKSJDBIK_ZqGUhwdkqXeuVROllNGK8cZceM",
+                    "Ac8rgAymFrvNYjfv14eAHC_ttZfG3AHl3AVhREN5IjGs39y0DYNlCjtDDKxp4UL-g6jPDwQTo5uEZpM4",
                     currency: "USD",
                   intent: "capture",
                    }}
@@ -218,11 +219,11 @@ console.log("user data ",userData)
                 <div className="relative mt-10 text-white">
                   <h3 className="mb-5 text-lg font-bold">Support</h3>
                   <p className="text-sm font-semibold">
-                    +1111111111{" "}
+                     0404032722
                     <span className="font-light">(International)</span>
                   </p>
                   <p className="mt-1 text-sm font-semibold">
-                    support@abc.com <span className="font-light">(Email)</span>
+                  flaminsignsandboxes@gmail.com <span className="font-light">(Email)</span>
                   </p>
                   <p className="mt-2 text-xs font-medium">
                     Call us now for payment related issues
