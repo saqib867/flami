@@ -105,7 +105,7 @@ console.log("user data ",userData)
               >
                 {custome == 'true' && userData?.type == 'sign' && <PaypalCheckout userData={signAdd} />}
                 {custome == 'true' && userData?.type == 'box' && <PaypalCheckout userData={boxAdd} />}
-                {custome == 'false' &&  <PaypalCheckout userData={otherProductTotal} />}
+                {custome == 'false' &&  <PaypalCheckout userData={basePrice} />}
 
               </PayPalScriptProvider>
               </div>
@@ -144,7 +144,7 @@ console.log("user data ",userData)
                         ${userData?.image || 0}
                       </p>
                     </li>}
-                    {userData?.type == 'sign' && <li className="flex justify-between">
+                    {custome == "true" && <li className="flex justify-between">
                       <div className="inline-flex">
                         <div className="ml-3">
                           <p className="text-base font-semibold text-white">
@@ -156,7 +156,7 @@ console.log("user data ",userData)
                         ${userData?.fixing_option || 0}
                       </p>
                     </li>}
-                   {userData?.type == 'sign' && <li className="flex justify-between">
+                   {custome == "true" && <li className="flex justify-between">
                       <div className="inline-flex">
                         <div className="ml-3">
                           <p className="text-base font-semibold text-white">
@@ -168,7 +168,7 @@ console.log("user data ",userData)
                         ${userData?.sign_edge || 0}
                       </p>
                     </li>}
-                    {userData?.type == 'sign' && <li className="flex justify-between">
+                    {custome == "true" && <li className="flex justify-between">
                       <div className="inline-flex">
                         <div className="ml-3">
                           <p className="text-base font-semibold text-white">
@@ -180,7 +180,7 @@ console.log("user data ",userData)
                         ${userData?.weather_proof || 0}
                       </p>
                     </li>}
-                    {userData?.type == 'box' && userData?.compartments && <li className="flex justify-between">
+                    {custome == "true" && userData?.compartments && <li className="flex justify-between">
                       <div className="inline-flex">
                         <div className="ml-3">
                           <p className="text-base font-semibold text-white">
@@ -192,7 +192,7 @@ console.log("user data ",userData)
                         ${userData?.compartments || 0}
                       </p>
                     </li>}
-                    <li className="flex justify-between">
+                   { custome == "true" && <li className="flex justify-between">
                       <div className="inline-flex">
                         <div className="ml-3">
                           <p className="text-base font-semibold text-white">
@@ -204,14 +204,14 @@ console.log("user data ",userData)
                          {Postage} ${postage_price}
                       </p>
                     </li>
-                   
+                   }
                   </ul>
                   <div className="my-5 h-0.5 w-full bg-white bg-opacity-30"></div>
                       <div className="flex justify-between">
                           <p className="text-sm font-semibold text-white">Total</p>
                         { userData?.type == 'sign' && custome == 'true' && <p className="text-sm font-semibold text-white">${signAdd}</p>}
                         { userData?.type == 'box'  && custome == 'true' &&  <p className="text-sm font-semibold text-white">${boxAdd}</p>}
-                        {custome == 'false' && <p className="text-sm font-semibold text-white">${otherProductTotal}</p>}
+                        {custome == 'false' && <p className="text-sm font-semibold text-white">${basePrice}</p>}
                       </div>
                   <div className="my-5 h-0.5 w-full bg-white bg-opacity-30"></div>
                 
