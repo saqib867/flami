@@ -20,7 +20,7 @@ const FeaturedBox = ({ productDetails, id,readMore,handleReadMore }) => {
        <div className="w-full h-[330px] flex justify-center items-center">
       <img
         src={`${baseImgUrl}${productDetails?.image?.data?.attributes?.url}`}
-        className="w-[330px] text-center"
+        className="w-[330px] text-center max-h-[330px]"
       />
      </div>
       <div>
