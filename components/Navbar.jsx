@@ -1,7 +1,8 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ArrowDownIcon, Bars3Icon, BellIcon, ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/router'
+import { Dropdown, Space } from 'antd'
 
 
 function classNames(...classes) {
@@ -37,9 +38,34 @@ export default function Navbar() {
     { name: 'Products', current: router.pathname === '/products' ? true : false, path: '/products' },
     { name: 'Contact', current: router.pathname === '/contact-us' ? true : false, path: '/contact-us' },
     { name: 'Design Your Sign or Box', current: router.pathname === '/create-custome' ? true : false, path: '/create-custome' },
-    { name: 'Customer', current: router.pathname === '/page_for_admin' ? true : false, path: '/page_for_admin' },
-
+    
   ]
+
+  const Current =()=>{
+       return(
+            <div onClick={()=>router.push("/page_for_admin")}>Customer</div>
+       )
+  }
+
+  const Logout =()=>{
+       return(
+             <div onClick={()=>handleLogout()} className='cursor-pointer'>Logout</div>
+       )
+  }
+  const items = [
+    {
+      label:<Current/>,
+      key: '0',
+    },
+   
+    {
+      type: 'divider',
+    },
+    {
+      label: <Logout/>,
+      key: '2',
+    },
+  ];
   const navItem = token ? navigation : navigation.filter(item=>item.path !== '/page_for_admin')
   return (
     <Disclosure as="nav" className="bg-[#003933]">
@@ -76,7 +102,7 @@ export default function Navbar() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 <div className="hidden lg:block">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 items-center">
                     {navItem.map((item) => (
                       <a
                         onClick={() => { router.push(item.path) }}
@@ -91,12 +117,26 @@ export default function Navbar() {
                         {item.name}
                       </a>
                     ))}
-                     {token && <button
-                        onClick={handleLogout}
-                        className='border-slate-300 border-[1px] rounded px-2 text-white'
-                      >
-                        Logout
-                      </button>}
+                    
+                      {
+                       token && <Dropdown
+                         menu={{
+                           items,
+                         }}
+                         trigger={['click',]}
+                       >
+                         <a onClick={(e) => e.preventDefault()}>
+                           <div className='cursor-pointer' >
+                            <Space className='text-white border border-gray-50 p-2 rounded'>
+                              Dashboard
+                           
+                              </Space> 
+                             
+                           </div>
+                           
+                         </a>
+                       </Dropdown>
+                      }
                   </div>
                 
                 </div>

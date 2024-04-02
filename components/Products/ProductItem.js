@@ -76,10 +76,10 @@ const ProductItem = () => {
     <>
     {ItemDetails && <div className="flex flex-col my-5">
       <div className="flex md:flex-row flex-col gap-3 justify-between">
-        <div className="flex flex-1 items-center justify-center">
+        <div className="flex flex-1 items-center justify-center max-h-[400px] w-[500px]">
           <img
             src={`${baseImgUri}${ItemDetails.heroImg}`}
-            className="rounded-md  w-[50%] sm:w-[80%]"
+            className="rounded-md  "
             alt="hero"
           />
         </div>
