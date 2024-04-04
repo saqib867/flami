@@ -165,7 +165,7 @@ function PersonalForm() {
                   baseImgUri +
                   productData?.data?.attributes?.heroImg?.data?.attributes?.url
                 }
-                className=" w-[50%] "
+                className="w-[100%] sm:w-[50%] "
               />
               <div className="flex flex-col gap-y-2 items-start">
                 <h3 className="text-lg">

@@ -24,7 +24,7 @@ function CheckoutSuccess({ isModalOpen, handleOk }) {
             
             <p className="text-center text-base">
               Thank you for considering flaming platform. we will try our best
-              to devliver quality product.
+              to deliver quality product.
             </p>
           </div>
         </div>
