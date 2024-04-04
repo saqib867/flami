@@ -76,7 +76,7 @@ const ProductItem = () => {
     <>
     {ItemDetails && <div className="flex flex-col my-5">
       <div className="flex md:flex-row flex-col gap-3 justify-between">
-        <div className="flex flex-1 items-center justify-center max-h-[400px] w-[500px]">
+        <div className="flex flex-1 items-center justify-center  max-h-[400px] h-full w-[100%] sm:w-[500px]">
           <img
             src={`${baseImgUri}${ItemDetails.heroImg}`}
             className="rounded-md  "
@@ -95,9 +95,9 @@ const ProductItem = () => {
          <div>{<DescriptionBlockRenderer description ={ItemDetails?.description}/>}</div> 
         </div>
       </div>
-      <div className="flex items-start gap-x-10 flex-col-reverse">
+      <div className="flex items-start gap-x-3 sm:gap-x-10 flex-col-reverse">
         <div
-          className={`my-12 flex flex-col gap-y-2 w-[100%] md:${
+          className={`sm:my-12 flex flex-col gap-y-2 w-[100%] md:${
             item == "Custom Wood Boxes" || item == "Custom Wood Signs"
               ? "w-[50%]"
               : "w-[100%]"
