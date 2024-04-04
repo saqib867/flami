@@ -7,7 +7,7 @@ const MainFooter = () => {
       <div className='flex flex-col sm:flex-row justify-between max-w-[970px] mx-auto gap-y-6'>
         <div className='flex flex-col gap-4'>
           <div className='flex items-center gap-2'>
-            <img src='/logo.png' alt='logo' />
+            <img src='/fl.webp' alt='logo' />
           </div>
           <span className='text-white text-sm max-w-[440px]'>
             We turn your ideas into beautifully crafted timber designs. Our name

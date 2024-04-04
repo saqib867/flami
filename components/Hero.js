@@ -6,7 +6,7 @@ const Hero = () => {
   console.log("asdfasf")
   return (
     <div className='bg-[#003933] flex justify-center py-2'>
-      <div className='justify-between md:flex-row flex-col gap-10 flex xl:max-w-7xl px-10'>
+      <div className='justify-between lg:flex-row flex-col gap-10 flex xl:max-w-7xl px-10'>
 
         <div className='flex flex-col  justify-center py-2'>
 
@@ -26,7 +26,7 @@ const Hero = () => {
           </div>
         </div>
         <div className='flex items-center justify-center'>
-          <img src="/hero.png" alt="hero" className='' />
+          <img src="/hero.png" alt="hero" className='w-[100%]' />
         </div>
       </div>
     </div>

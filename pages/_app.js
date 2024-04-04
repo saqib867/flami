@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // afasdfasdf
 export default function App({ Component, pageProps }) {
   return (
-    <div className='flex flex-col justify-between h-full'>
+    <div className='flex flex-col justify-between h-full overflow-x-hidden'>
       <Navbar />
       <ConfigProvider theme={theme}>
         <Component {...pageProps} />

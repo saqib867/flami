@@ -88,8 +88,8 @@ export default function Navbar() {
               <div className="flex flex-1 gap-x-2 items-center md:items-stretch justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-8 w-auto"
-                    src="/logo.png"
+                    className=" h-[26px] sm:h-8 w-auto"
+                    src="/fl.webp"
                     alt="Your Company"
                   />
                   

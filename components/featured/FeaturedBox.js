@@ -16,7 +16,7 @@ const FeaturedBox = ({ productDetails, id,readMore,handleReadMore }) => {
   }
 
   return (
-    <div className=" shadow-xl flex flex-col rounded-[4px]  justify-between flex-1 max-w-[92%] mx-auto ">
+    <div className=" shadow-xl flex flex-col rounded-[4px]  justify-between flex-1 max-w-[92%] mx-auto overflow-x-hidden ">
        <div className="w-full h-[330px] flex justify-center items-center">
       <img
         src={`${baseImgUrl}${productDetails?.image?.data?.attributes?.url}`}
@@ -31,7 +31,7 @@ const FeaturedBox = ({ productDetails, id,readMore,handleReadMore }) => {
 
         <div className="text-black font-[400] my-3 h-24 ">
           <span className="featuer_box_description">{productDetails?.description}</span>
-          <div className="my-2" ><span className="text-blue-500 cursor-pointer" onClick={()=>handleReadMore(productDetails)}>Read More</span></div>
+          <div className="my-2"><span className="text-blue-500 cursor-pointer" onClick={()=>handleReadMore(productDetails)}>Read More</span></div>
         </div>
         </div>
         <div className="flex justify-between items-center w-full flex-1bottom-0">
